@@ -18,29 +18,33 @@
 </head>
 <body>
 
-<div id='cssmenu'>
-<ul>
-   <li><a href='#'><span>Home</span></a></li>
-   <li class='active has-sub'><a href='#'><span>Music</span></a>
-      <ul>
-         <li class='has-sub'><a href='listFilesServlet'><span>List Files</span></a>
-            <ul>
-               <li><a href='#'><span>Sub Product</span></a></li>
-               <li class='last'><a href='#'><span>Sub Product</span></a></li>
-            </ul>
-         </li>
-         <li class='has-sub'><a href='#'><span>Product 2</span></a>
-            <ul>
-               <li><a href='#'><span>Sub Product</span></a></li>
-               <li class='last'><a href='#'><span>Sub Product</span></a></li>
-            </ul>
-         </li>
-      </ul>
-   </li>
-   <li><a href='#'><span>About</span></a></li>
-   <li class='last'><a href='#'><span>Contact</span></a></li>
-</ul>
-</div>
+<video width="320" height="240" controls>
+   <source src="video/trailer.mp4" type="video/mp4">
+</video>
+
+<%--<div id='cssmenu'>--%>
+<%--<ul>--%>
+   <%--<li><a href='#'><span>Home</span></a></li>--%>
+   <%--<li class='active has-sub'><a href='#'><span>Music</span></a>--%>
+      <%--<ul>--%>
+         <%--<li class='has-sub'><a href='listFilesServlet'><span>List Files</span></a>--%>
+            <%--<ul>--%>
+               <%--<li><a href='#'><span>Sub Product</span></a></li>--%>
+               <%--<li class='last'><a href='#'><span>Sub Product</span></a></li>--%>
+            <%--</ul>--%>
+         <%--</li>--%>
+         <%--<li class='has-sub'><a href='#'><span>Product 2</span></a>--%>
+            <%--<ul>--%>
+               <%--<li><a href='#'><span>Sub Product</span></a></li>--%>
+               <%--<li class='last'><a href='#'><span>Sub Product</span></a></li>--%>
+            <%--</ul>--%>
+         <%--</li>--%>
+      <%--</ul>--%>
+   <%--</li>--%>
+   <%--<li><a href='#'><span>About</span></a></li>--%>
+   <%--<li class='last'><a href='#'><span>Contact</span></a></li>--%>
+<%--</ul>--%>
+<%--</div>--%>
 
 	<!--  -->
 
