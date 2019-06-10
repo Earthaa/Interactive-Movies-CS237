@@ -7,11 +7,11 @@ import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
 import com.constants.Constants;
 public class VideoClip implements Comparable<VideoClip> {
-    private FSDataInputStream video;
+    //private FSDataInputStream video;
     private long size;
     private String ID;
     private int visitCount;
-
+    private byte[] video;
     VideoClip(String ID) throws IOException{
         this.ID = ID;
         String pathName = Constants.HDFSAddress + "/video/" +  ID + ".mp4";
@@ -25,9 +25,10 @@ public class VideoClip implements Comparable<VideoClip> {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        this.video = in;
+        this.video = in.readAllBytes();
         this.size = fs.getFileStatus(new Path(pathName)).getLen();
         this.visitCount = 0;
+        in.close();
     }
 
     VideoClip(VideoClip v){
@@ -36,9 +37,13 @@ public class VideoClip implements Comparable<VideoClip> {
         this.ID = v.ID;
         this.visitCount = v.visitCount;
     }
-    public FSDataInputStream getVideo(){
+    public byte[] getVideo(){
         return this.video;
     }
+
+//    public FSDataInputStream getVideo(){
+//        return this.video;
+//    }
     public long getSize(){
         return this.size;
     }
