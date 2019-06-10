@@ -21,6 +21,7 @@ public class VideoClip implements Comparable<VideoClip> {
         try {
             fs = FileSystem.get(URI.create(pathName),config);
             in=fs.open(new Path(pathName));
+
         } catch (IOException e) {
             e.printStackTrace();
         }
