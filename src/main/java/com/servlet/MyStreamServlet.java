@@ -64,40 +64,41 @@ public class MyStreamServlet extends HttpServlet{
 
 		  String range=req.getHeader("Range");
 		  resp.setHeader("Content-type","mp4");
-		  System.out.println(range);
-		  OutputStream out=resp.getOutputStream();
-		  if(range == null)
-		  {
-			  String filename = ID;
-			  resp.setHeader("Content-Disposition", "attachment; filename="+filename);
-			  resp.setContentType("application/octet-stream");
-			  resp.setContentLength((int)fileLen);
-			  IOUtils.copyBytes(in, out, fileLen, false);
-		  }
-		  else
-		  {
-			  long start=Integer.valueOf(range.substring(range.indexOf("=")+1, range.indexOf("-")));
-			  long count=fileLen-start;
-			  long end;
-			  if(range.endsWith("-"))
-				  end=fileLen-1;
-			  else
-				  end=Integer.valueOf(range.substring(range.indexOf("-")+1));
-			  String ContentRange="bytes "+String.valueOf(start)+"-"+end+"/"+String.valueOf(fileLen);
-			  resp.setStatus(206);
-			  resp.setContentType("video/mpeg4");
-			  resp.setHeader("Content-Range",ContentRange);
-			  //System.out.println(count);
-			  in.seek(start);
-			  try{
-				  IOUtils.copyBytes(in, out, count, false);
-			  }
-			  catch(Exception e)
-			  {
-				  throw e;
-			  }
-		  }
 
+		  OutputStream out=resp.getOutputStream();
+
+
+		  String filename = ID;
+		  resp.setHeader("Content-Disposition", "attachment; filename="+filename);
+		  resp.setContentType("application/octet-stream");
+		  resp.setContentLength((int)fileLen);
+		  IOUtils.copyBytes(in, out, fileLen, false);
+
+//		  else
+//		  {
+//			  long start=Integer.valueOf(range.substring(range.indexOf("=")+1, range.indexOf("-")));
+//			  long count=fileLen-start;
+//			  long end;
+//			  if(range.endsWith("-"))
+//				  end=fileLen-1;
+//			  else
+//				  end=Integer.valueOf(range.substring(range.indexOf("-")+1));
+//			  String ContentRange="bytes "+String.valueOf(start)+"-"+end+"/"+String.valueOf(fileLen);
+//			  resp.setStatus(206);
+//			  resp.setContentType("video/mpeg4");
+//			  resp.setHeader("Content-Range",ContentRange);
+//			  //System.out.println(count);
+//			  in.seek(start);
+//			  try{
+//				  IOUtils.copyBytes(in, out, count, false);
+//			  }
+//			  catch(Exception e)
+//			  {
+//				  throw e;
+//			  }
+//		  }
+		  in.close();
+		out.close();
 	  }
 }
 
