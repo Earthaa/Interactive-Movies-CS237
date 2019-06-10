@@ -66,12 +66,16 @@ public class MyStreamServlet extends HttpServlet{
 		  resp.setHeader("Content-type","mp4");
 
 		  OutputStream out=resp.getOutputStream();
-		  out.write(clip.getVideo());
 
 		  String filename = ID;
 		  resp.setHeader("Content-Disposition", "attachment; filename="+filename);
 		  resp.setContentType("application/octet-stream");
 		  resp.setContentLength((int)fileLen);
+
+		  out.write(clip.getVideo());
+		  out.flush();
+
+		  out.close();
 
 		  //IOUtils.copyBytes(in, out, fileLen, false);
 
@@ -98,8 +102,7 @@ public class MyStreamServlet extends HttpServlet{
 //				  throw e;
 //			  }
 //		  }
-//		  in.close();
-//		  out.close();
+
 	  }
 }
 
