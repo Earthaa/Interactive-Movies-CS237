@@ -1,2 +1,6 @@
-/Users/earthaa/Desktop/LearningMaterial/CS237/projects/Play-Videos-In-HDFS-master/src/main/java/com/constants/Constants.java
-/Users/earthaa/Desktop/LearningMaterial/CS237/projects/Play-Videos-In-HDFS-master/src/main/java/com/servlet/MyStreamServlet.java
+/Users/earthaa/Desktop/LearningMaterial/CS237/projects/MediaPlayer-master/Interactive-Movies/src/main/java/com/constants/Constants.java
+/Users/earthaa/Desktop/LearningMaterial/CS237/projects/MediaPlayer-master/Interactive-Movies/src/main/java/com/utils/VideoClip.java
+/Users/earthaa/Desktop/LearningMaterial/CS237/projects/MediaPlayer-master/Interactive-Movies/src/main/java/com/utils/ServerBuffer.java
+/Users/earthaa/Desktop/LearningMaterial/CS237/projects/MediaPlayer-master/Interactive-Movies/src/main/java/com/servlet/MyStreamServlet.java
+/Users/earthaa/Desktop/LearningMaterial/CS237/projects/MediaPlayer-master/Interactive-Movies/src/main/java/com/utils/test.java
+/Users/earthaa/Desktop/LearningMaterial/CS237/projects/MediaPlayer-master/Interactive-Movies/src/main/java/com/utils/Server.java
