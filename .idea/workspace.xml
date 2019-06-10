@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1a817c3f-c62c-4540-82ff-df3794115eb4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Interactive-Movies.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Interactive-Movies.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/servlet/MyStreamServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/servlet/MyStreamServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/utils/VideoClip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/utils/VideoClip.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/movie.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/movie.html" afterDir="false" />
-    </list>
+    <list default="true" id="1a817c3f-c62c-4540-82ff-df3794115eb4" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,7 +27,7 @@
     <session id="1815706798">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.2" value="1" />
@@ -61,7 +53,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="42" />
+          <entry key="html" value="49" />
           <entry key="java" value="4794" />
           <entry key="jsp" value="10" />
           <entry key="txt" value="11" />
@@ -70,7 +62,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="42" />
+          <entry key="HTML" value="49" />
           <entry key="JAVA" value="4794" />
           <entry key="JSP" value="10" />
           <entry key="PLAIN_TEXT" value="11" />
@@ -85,7 +77,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/servlet/MyStreamServlet.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="213">
-              <caret line="69" column="10" selection-start-line="69" selection-start-column="10" selection-end-line="69" selection-end-column="10" />
+              <caret line="69" selection-start-line="69" selection-end-line="69" />
             </state>
           </provider>
         </entry>
@@ -134,8 +126,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/movie.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="67" selection-start-line="8" selection-start-column="67" selection-end-line="8" selection-end-column="67" />
+            <state relative-caret-position="150">
+              <caret line="10" column="7" lean-forward="true" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -195,7 +187,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="33" />
+    <option name="x" value="128" />
+    <option name="y" value="200" />
     <option name="width" value="1403" />
     <option name="height" value="813" />
   </component>
@@ -438,18 +431,18 @@
       <workItem from="1560050602854" duration="5161000" />
       <workItem from="1560055949688" duration="939000" />
       <workItem from="1560114028106" duration="15521000" />
-      <workItem from="1560131037714" duration="1879000" />
+      <workItem from="1560131037714" duration="2635000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23546000" />
+    <option name="totallyTimeSpent" value="24302000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="33" width="1403" height="813" extended-state="0" />
+    <frame x="128" y="200" width="1403" height="813" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20205732" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20205732" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -459,7 +452,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.25381416" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.25381416" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -595,7 +588,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/servlet/MyStreamServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="213">
-          <caret line="69" column="10" selection-start-line="69" selection-start-column="10" selection-end-line="69" selection-end-column="10" />
+          <caret line="69" selection-start-line="69" selection-end-line="69" />
         </state>
       </provider>
     </entry>
@@ -620,8 +613,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/movie.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="67" selection-start-line="8" selection-start-column="67" selection-end-line="8" selection-end-column="67" />
+        <state relative-caret-position="150">
+          <caret line="10" column="7" lean-forward="true" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
         </state>
       </provider>
     </entry>

@@ -13,12 +13,12 @@ This Project use web server as a gateway.HDFS Clusters don't need to be exposed 
 本工程使用web服务器作为网关，无需将HDFS集群暴露在公网中，同时实现视频快进。</br>
 # Usage 用法
 1、Modify the ip address and port in com.constants.Constants.java into the namenode's IP and port.</br>
-2、Modify the fpath parameter in http://localhost:8080/HDFSVideoDemo/stream?fpath=/test.mp4 in MyStream.html into the HDFS path of the video file you want to play.</br>
+2、Modify the fpath parameter in http://localhost:8080/HDFSVideoDemo/stream?id=trailer in MyStream.html into the HDFS path of the video file you want to play.</br>
 3、Deploy the web project in a web server and start it.</br>
-4、Visit http://localhost:8080/HDFSVideoDemo/MyStream.html in a browser.</br>
+4、Visit http://localhost:8080/HDFSVideoDemo/movie.html in a browser.</br>
 </br>
-1、将com.constants.Constans.java中的ip地址和端口号改为您Hadoop集群中主节点的IP地址以及端口号（默认为9000）。</br>
-2、将MyStream.html中video标签中的url：http://localhost:8080/HDFSVideoDemo/stream?fpath=/test.mp4 中的fpath参数改为您Hadoop集群中视频文件的路径。</br>
+1、将com.constants.Constans.java中的ip地址和端口号改为您Hadoop集群中主节点的IP地址以及端口号（默认为8020）。</br>
+2、将MyStream.html中video标签中的url：http://localhost:8080/HDFSVideoDemo/stream?ID=trailer 中的ID参数改为视频的ID。</br>
 3、将工程部署在web服务器并启动。</br>
 4、访问http://localhost:8080/HDFSVideoDemo/MyStream.html即可。</br>
 # Notice 注意事项
