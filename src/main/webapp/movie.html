@@ -1,13 +1,109 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+    <meta charset="UTF-8">
+    <title>CS237 Interactive Movie Streaming</title>
+    <!-- <link rel="stylesheet" type="text/css" href="try.css"> -->
+    <style type="text/css">
+        #popup{
+            position: absolute;
+            /* visibility: hidden; */
+            overflow: hidden;
+            background-color:#F9F9F9;
+            padding:5px;
+            width:200px;
+            height:150px;
+            display: none;
+            margin-left: -100px;
+            margin-top: -75px;
+            top: 50%;
+            left:50%;
+            opacity: 0.8;
+        }
+
+        #video{
+            object-fit: fill;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
-<video width="800" height="600" controls>
-    <source src="http://localhost:8080/HDFSVideoDemo/stream?ID=trailer" type="video/mp4">
+<video id="video" controls autoplay>
+    <source id="v1" src="http://localhost:8080/HDFSVideoDemo/stream?ID=test1" type="video/mp4" />
 </video>
+<div id="popup">
+    <p id="question">What to do next?</p>
+    <p id="c1"></p>
+    <p id="c2"></p>
+</div>
+<script>
+    var video = document.getElementById("video");
+    var popUp = document.getElementById("popup");
+    var question = document.getElementById("question");
+    var c1 = document.getElementById("c1");
+    var c2 = document.getElementById("c2");
+    var videoSrc = document.getElementsByTagName("source")[0];
+    video.addEventListener("ended", function() {
+        document.webkitCancelFullScreen();
+        video.style.opacity=0.6;
+        if(videoSrc.getAttribute("id") == "v1") {
+            c1.textContent = "Continue watching them dancing";
+            c2.textContent = "Watch another team.";
+        } else if (videoSrc.getAttribute("id") == "v2") {
+            c1.textContent = "Choose video 4";
+            c2.textContent = "Choose video 5";
+        } else if (videoSrc.getAttribute("id") == "v3") {
+            c1.textContent = "Choose video 6";
+            c2.textContent = "Choose video 7";
+        } else {
+            question.textContent = "That's The End. Go back to the beginning?";
+            c1.textContent = "Yes";
+            c2.textContent = "No";
+        }
+        popUp.style.display = "block";
+    });
 
+    c1.addEventListener("click", function(){
+        if(videoSrc.getAttribute("id") == "v1") {
+            videoSrc.setAttribute("src", "http://localhost:8080/HDFSVideoDemo/stream?ID=test2");
+            videoSrc.setAttribute("id", "v2");
+        } else if (videoSrc.getAttribute("id") == "v2") {
+            videoSrc.setAttribute("src", "http://localhost:8080/HDFSVideoDemo/stream?ID=test4");
+            videoSrc.setAttribute("id", "v4");
+        } else if (videoSrc.getAttribute("id") == "v3") {
+            videoSrc.setAttribute("src", "http://localhost:8080/HDFSVideoDemo/stream?ID=test6");
+            videoSrc.setAttribute("id", "v6");
+        } else {
+            videoSrc.setAttribute("src", "http://localhost:8080/HDFSVideoDemo/stream?ID=test1");
+            videoSrc.setAttribute("id", "v1");
+        }
+        popUp.style.display="none";
+        video.style.opacity=1;
+        video.load();
+    });
+
+    c2.onclick = function() {
+        if(videoSrc.getAttribute("id") == "v1") {
+            videoSrc.setAttribute("src", "http://localhost:8080/HDFSVideoDemo/stream?ID=test3");
+            videoSrc.setAttribute("id", "v3");
+        } else if (videoSrc.getAttribute("id") == "v2") {
+            videoSrc.setAttribute("src", "http://localhost:8080/HDFSVideoDemo/stream?ID=test5");
+            videoSrc.setAttribute("id", "v5");
+        } else if (videoSrc.getAttribute("id") == "v3") {
+            videoSrc.setAttribute("src", "http://localhost:8080/HDFSVideoDemo/stream?ID=test7");
+            videoSrc.setAttribute("id", "v7");
+        } else {
+            // video.parentNode.removeChild(video);
+            var parent = video.parentNode;
+            parent.removeChild(video);
+            var ending = document.createElement("h1");
+            ending.textContent = "Thanks for watching";
+            parent.append(ending);
+        }
+        popUp.style.display="none";
+        video.style.opacity=1;
+        video.load();
+    };
+</script>
 </body>
 </html>
