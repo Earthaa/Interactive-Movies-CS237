@@ -31,7 +31,7 @@
                 <version>2.1</version>
                 <configuration>
                     <port>8080</port>
-                    <path>/HDFSVideoDemo</path>
+                    <path>/InteractiveMovie</path>
                     <uriEncoding>UTF-8</uriEncoding>
                     <finalName>HDFSVideoDemo</finalName>
                     <server>tomcat7</server>

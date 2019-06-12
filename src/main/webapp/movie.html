@@ -54,7 +54,7 @@
 
 
 <video id="video" controls autoplay>
-    <source id="v1" src="http://192.168.0.4:8080/HDFSVideoDemo/stream?ID=test1" type="video/mp4" />
+    <source id="v1" src="http://192.168.0.4:8080/InteractiveMovie/stream?ID=test1" type="video/mp4" />
 </video>
 
 
@@ -116,16 +116,16 @@
     });
     btn1.addEventListener("click", function(){
         if(videoSrc.getAttribute("id") == "v1") {
-            videoSrc.setAttribute("src", "http://192.168.0.4:8080/HDFSVideoDemo/stream?ID=test2");
+            videoSrc.setAttribute("src", "http://192.168.0.4:8080/InteractiveMovie/stream?ID=test2");
             videoSrc.setAttribute("id", "v2");
         } else if (videoSrc.getAttribute("id") == "v2") {
-            videoSrc.setAttribute("src", "http://192.168.0.4:8080/HDFSVideoDemo/stream?ID=test4");
+            videoSrc.setAttribute("src", "http://192.168.0.4:8080/InteractiveMovie/stream?ID=test4");
             videoSrc.setAttribute("id", "v4");
         } else if (videoSrc.getAttribute("id") == "v3") {
-            videoSrc.setAttribute("src", "http://192.168.0.4:8080/HDFSVideoDemo/stream?ID=test6");
+            videoSrc.setAttribute("src", "http://192.168.0.4:8080/InteractiveMovie/stream?ID=test6");
             videoSrc.setAttribute("id", "v6");
         } else {
-            videoSrc.setAttribute("src", "http://192.168.0.4:8080/HDFSVideoDemo/stream?ID=test1");
+            videoSrc.setAttribute("src", "http://192.168.0.4:8080/InteractiveMovie/stream?ID=test1");
             videoSrc.setAttribute("id", "v1");
         }
         // popUp.style.display="none";
@@ -135,13 +135,13 @@
     });
     btn2.onclick = function() {
         if(videoSrc.getAttribute("id") == "v1") {
-            videoSrc.setAttribute("src", "http://192.168.0.4:8080/HDFSVideoDemo/stream?ID=test3");
+            videoSrc.setAttribute("src", "http://192.168.0.4:8080/InteractiveMovie/stream?ID=test3");
             videoSrc.setAttribute("id", "v3");
         } else if (videoSrc.getAttribute("id") == "v2") {
-            videoSrc.setAttribute("src", "http://192.168.0.4:8080/HDFSVideoDemo/stream?ID=test5");
+            videoSrc.setAttribute("src", "http://192.168.0.4:8080/InteractiveMovie/stream?ID=test5");
             videoSrc.setAttribute("id", "v5");
         } else if (videoSrc.getAttribute("id") == "v3") {
-            videoSrc.setAttribute("src", "http://192.168.0.4:8080/HDFSVideoDemo/stream?ID=test7");
+            videoSrc.setAttribute("src", "http://192.168.0.4:8080/InteractiveMovie/stream?ID=test7");
             videoSrc.setAttribute("id", "v7");
         } else {
             // video.parentNode.removeChild(video);

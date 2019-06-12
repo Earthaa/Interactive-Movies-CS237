@@ -53,15 +53,18 @@ public class MyStreamServlet extends HttpServlet{
 	  {
 
 
-	  	System.out.println("Play movie!");
 		  Server server = Server.getServer();
 
 		  String ID=req.getParameter("ID");
 		  if(ID==null)
 			  return;
 
+		  long startTime=System.currentTimeMillis();
+
 		  VideoClip clip = server.getClip(ID);
 		  //FSDataInputStream in = clip.getVideo();
+		  long endTime = System.currentTimeMillis();
+		  System.out.println("Run Time： "+(endTime - startTime)+" ms");
 
 		  final long fileLen = clip.getSize();
 
@@ -79,6 +82,8 @@ public class MyStreamServlet extends HttpServlet{
 		  out.flush();
 
 		  out.close();
+
+
 
 
 	  }
