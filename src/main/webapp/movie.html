@@ -1,13 +1,165 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+    <meta charset="UTF-8">
+    <title>CS237 Interactive Movie Streaming</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style type="text/css">
+        #popup{
+            /* visibility: hidden; */
+            overflow: hidden;
+            background-color:#F9F9F9;
+            padding:5px;
+            width:200px;
+            height:150px;
+            display: none;
+            margin-left: -100px;
+            margin-top: -75px;
+            top: 50%;
+            left:50%;
+            opacity: 0.8;
+        }
+        #video{
+            object-fit: fill;
+            width: 100%;
+        }
+        .row {
+            width: 50%;
+            position: absolute;
+            left:50%;
+            top: 65%;
+            z-index: -1;
+            opacity: 0.8;
+        }
+    </style>
 </head>
 <body>
-<video width="800" height="600" controls>
-    <source src="http://192.168.0.4:8080/HDFSVideoDemo/stream?ID=trailer" type="video/mp4">
+
+<nav class="navbar navbar-dark bg-dark navbar-expand-sm">
+    <a class="navbar-brand" href="#">CS 237</a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://github.com/Earthaa/Interactive-Movies-CS237">GitHub</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Demo</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+<video id="video" controls autoplay>
+    <source id="v1" src="http://192.168.0.4:8080/HDFSVideoDemo/stream?ID=test1" type="video/mp4" />
 </video>
 
+
+<div class="row">
+
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 id="ct" class="card-title"></h5>
+                <p id="c1" class="card-text"></p>
+                <a id="btn1" href="#" class="btn btn-primary">Go</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Or ...</h5>
+                <p id="c2" class="card-text"></p>
+                <a id="btn2" href="#" class="btn btn-primary">Go</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var video = document.getElementById("video");
+    // var popUp = document.getElementById("popup");
+    // var question = document.getElementById("question");
+    var c1 = document.getElementById("c1");
+    var c2 = document.getElementById("c2");
+    var ct = document.getElementById("ct");
+    var videoSrc = document.getElementsByTagName("source")[0];
+    var card = document.getElementsByClassName("row")[0];
+    var btn1 = document.getElementById("btn1");
+    var btn2 = document.getElementById("btn2");
+    video.addEventListener("ended", function() {
+        document.webkitCancelFullScreen();
+        video.style.opacity=0.6;
+        if(videoSrc.getAttribute("id") == "v1") {
+            // question.textContent = "What to do next?"
+            ct.textContent = "You want to ...";
+            c1.textContent = "Continue watching team blue";
+            c2.textContent = "Watch another team.";
+        } else if (videoSrc.getAttribute("id") == "v2") {
+            c1.textContent = "Choose video 4";
+            c2.textContent = "Choose video 5";
+        } else if (videoSrc.getAttribute("id") == "v3") {
+            c1.textContent = "Choose video 6";
+            c2.textContent = "Choose video 7";
+        } else {
+            // question.textContent = "That's The End. Go back to the beginning?";
+            ct.textContent = "That's the end."
+            c1.textContent = "Go back to the beginning";
+            c2.textContent = "Stop watching";
+        }
+        // popUp.style.display = "block";
+        card.style.zIndex = 1;
+    });
+    btn1.addEventListener("click", function(){
+        if(videoSrc.getAttribute("id") == "v1") {
+            videoSrc.setAttribute("src", "http://192.168.0.4:8080/HDFSVideoDemo/stream?ID=test2");
+            videoSrc.setAttribute("id", "v2");
+        } else if (videoSrc.getAttribute("id") == "v2") {
+            videoSrc.setAttribute("src", "http://192.168.0.4:8080/HDFSVideoDemo/stream?ID=test4");
+            videoSrc.setAttribute("id", "v4");
+        } else if (videoSrc.getAttribute("id") == "v3") {
+            videoSrc.setAttribute("src", "http://192.168.0.4:8080/HDFSVideoDemo/stream?ID=test6");
+            videoSrc.setAttribute("id", "v6");
+        } else {
+            videoSrc.setAttribute("src", "http://192.168.0.4:8080/HDFSVideoDemo/stream?ID=test1");
+            videoSrc.setAttribute("id", "v1");
+        }
+        // popUp.style.display="none";
+        card.style.zIndex = -1;
+        video.style.opacity=1;
+        video.load();
+    });
+    btn2.onclick = function() {
+        if(videoSrc.getAttribute("id") == "v1") {
+            videoSrc.setAttribute("src", "http://192.168.0.4:8080/HDFSVideoDemo/stream?ID=test3");
+            videoSrc.setAttribute("id", "v3");
+        } else if (videoSrc.getAttribute("id") == "v2") {
+            videoSrc.setAttribute("src", "http://192.168.0.4:8080/HDFSVideoDemo/stream?ID=test5");
+            videoSrc.setAttribute("id", "v5");
+        } else if (videoSrc.getAttribute("id") == "v3") {
+            videoSrc.setAttribute("src", "http://192.168.0.4:8080/HDFSVideoDemo/stream?ID=test7");
+            videoSrc.setAttribute("id", "v7");
+        } else {
+            // video.parentNode.removeChild(video);
+            var parent = video.parentNode;
+            parent.removeChild(video);
+            var ending = document.createElement("h1");
+            ending.textContent = "Thanks for watching";
+            parent.append(ending);
+            card.parentNode.removeChild(card);
+        }
+        // popUp.style.display="none";
+        card.style.zIndex = -1;
+        video.style.opacity=1;
+        video.load();
+    };
+</script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
