@@ -51,6 +51,9 @@ public class MyStreamServlet extends HttpServlet{
 
 	public void preview(HttpServletRequest req,HttpServletResponse resp) throws Exception
 	  {
+
+
+	  	System.out.println("Play movie!");
 		  Server server = Server.getServer();
 
 		  String ID=req.getParameter("ID");
@@ -77,31 +80,6 @@ public class MyStreamServlet extends HttpServlet{
 
 		  out.close();
 
-		  //IOUtils.copyBytes(in, out, fileLen, false);
-
-//		  else
-//		  {
-//			  long start=Integer.valueOf(range.substring(range.indexOf("=")+1, range.indexOf("-")));
-//			  long count=fileLen-start;
-//			  long end;
-//			  if(range.endsWith("-"))
-//				  end=fileLen-1;
-//			  else
-//				  end=Integer.valueOf(range.substring(range.indexOf("-")+1));
-//			  String ContentRange="bytes "+String.valueOf(start)+"-"+end+"/"+String.valueOf(fileLen);
-//			  resp.setStatus(206);
-//			  resp.setContentType("video/mpeg4");
-//			  resp.setHeader("Content-Range",ContentRange);
-//			  //System.out.println(count);
-//			  in.seek(start);
-//			  try{
-//				  IOUtils.copyBytes(in, out, count, false);
-//			  }
-//			  catch(Exception e)
-//			  {
-//				  throw e;
-//			  }
-//		  }
 
 	  }
 }

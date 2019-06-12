@@ -1,6 +1,5 @@
-# Play-Videos-In-HDFS
-This project realizes playing videos storing in HDFS(Hadoop) in the web page online.</br>
-这个工程实现了在网页中在线播放存储在HDFS(Hadoop)中的视频文件的功能。
+# Interactive Movie
+简易交互式电影，采用HDFS架构
 # Introduce 介绍
 In some existing methods:</br>
 WebHDFS/streamFile require that HDFS Clusters be exposed in public network and WebHDFS can't fast forward.</br>
@@ -11,16 +10,18 @@ This Project use web server as a gateway.HDFS Clusters don't need to be exposed 
 使用WebHDFS/streamFile方式必须将HDFS集群暴露在公网，其中WebHDFS无法快进。</br>
 使用HTTPFS GateWay方式无法快进。</br>
 本工程使用web服务器作为网关，无需将HDFS集群暴露在公网中，同时实现视频快进。</br>
+# 文件存放位置
+在HDFS默认文件夹中建立一个video文件夹，将文件存放进去即可
 # Usage 用法
 1、Modify the ip address and port in com.constants.Constants.java into the namenode's IP and port.</br>
-2、Modify the fpath parameter in http://localhost:8080/HDFSVideoDemo/stream?id=trailer in MyStream.html into the HDFS path of the video file you want to play.</br>
+2、Modify the fpath parameter in http://localhost:8080/HDFSVideoDemo/stream?id=trailer in movie.html into the HDFS path of the video file you want to play.</br>
 3、Deploy the web project in a web server and start it.</br>
 4、Visit http://localhost:8080/HDFSVideoDemo/movie.html in a browser.</br>
 </br>
 1、将com.constants.Constans.java中的ip地址和端口号改为您Hadoop集群中主节点的IP地址以及端口号（默认为8020）。</br>
 2、将MyStream.html中video标签中的url：http://localhost:8080/HDFSVideoDemo/stream?ID=trailer 中的ID参数改为视频的ID。</br>
 3、将工程部署在web服务器并启动。</br>
-4、访问http://localhost:8080/HDFSVideoDemo/MyStream.html即可。</br>
+4、访问http://localhost:8080/HDFSVideoDemo/movie.html即可。</br>
 # Notice 注意事项
 1、This project use the new label <video> which now only supports Ogg,MPEG4(MP4),WebM.If you want more video types,try to use another web video player.As the same time,please use the browsers which supports HTML5.</br>
 2、This poject supports videos' downloading.Just access the url in video label in browser.</br>
@@ -29,5 +30,4 @@ This Project use web server as a gateway.HDFS Clusters don't need to be exposed 
 1、本工程中前端播放器采用HTML5中新加入的<video>标签，目前只支持Ogg、MPEG4（MP4）、WebM三种格式，若想支持更多格式，请使用换用其他前端播放器，同时请使用支持HTML5的浏览器进行视频播放。</br>
 2、本工程支持视频的下载，直接在浏览器中访问MyStream.html中video标签中的URL即可。</br>
 3、本工程采用maven构建，如果您不使用maven，可以到 http://pan.baidu.com/s/1gf33IpH 下载相关jar包，自行构建web项目。<br>
-# Screenshot 截图
-<img src="https://github.com/yeleaveszi/Play-Videos-In-HDFS/blob/master/pic.png"  alt="截图" />
+
