@@ -37,7 +37,13 @@ public class ServerBuffer {
     public VideoClip getClip(String ID){
        return idMap.get(ID);
     }
+    public void removeClip(String ID) throws Exception{
 
+        VideoClip clip = idMap.get(ID);
+        clipsPQ.remove(clip);
+        size--;
+        idMap.remove(ID);
+    }
     public void addClip(String ID, VideoClip clip){
         if(idMap.containsKey(ID)){
             System.out.println("This clip has already in the buffer");

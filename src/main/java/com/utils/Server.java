@@ -24,6 +24,7 @@ public class Server {
             String[] tmp = status[i].getPath().toString().split("[/]");
             String ID  = tmp[tmp.length - 1].split("[.]")[0];
             this.videoVisitCount.put(ID,0);
+
         }
     }
 
@@ -43,6 +44,8 @@ public class Server {
             clip = this.sbBuffer.getClip(ID);
             //For it has already exists, the clip has already been saved in the buffer, so does the count
             clip.incVisitCount();
+            sbBuffer.removeClip(ID);
+            sbBuffer.addClip(ID,clip);
             videoVisitCount.put(ID, clip.getVisitCount());
         }
         //Such clip doesn't exist in buufer
