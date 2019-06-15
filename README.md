@@ -23,7 +23,7 @@ This Project use web server as a gateway.HDFS Clusters don't need to be exposed 
 3、This project is a maven project.If you don't use maven,please download the required jars from http://pan.baidu.com/s/1gf33IpH and build the web project yourself.
 </br>
 # Demo
-<img src="https://github.com/Earthaa/Interactive-Movies-CS237/demo1.png"  alt="demo1" />
-<img src="https://github.com/Earthaa/Interactive-Movies-CS237/demo2.png"  alt="demo2" />
+<img src="https://github.com/Earthaa/Interactive-Movies-CS237/blob/master/demo1.png"  alt="demo1" />
+<img src="https://github.com/Earthaa/Interactive-Movies-CS237/blob/master/demo2.png"  alt="demo2" />
 
 
