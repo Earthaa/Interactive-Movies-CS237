@@ -39,6 +39,7 @@ public class Server {
         if(! videoVisitCount.containsKey(ID)){
             throw new Exception("ID does not exist!");
         }
+
         VideoClip clip = null;
         if(this.sbBuffer.hasClip(ID)){
             clip = this.sbBuffer.getClip(ID);
@@ -48,7 +49,7 @@ public class Server {
             sbBuffer.addClip(ID,clip);
             videoVisitCount.put(ID, clip.getVisitCount());
         }
-        //Such clip doesn't exist in buufer
+        //Such clip doesn't exist in buffer
         else {
             clip = new VideoClip(ID);
             videoVisitCount.put(ID, videoVisitCount.get(ID) + 1);

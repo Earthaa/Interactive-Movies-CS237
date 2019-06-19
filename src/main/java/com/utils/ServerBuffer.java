@@ -4,7 +4,6 @@ import java.util.*;
 
 public class ServerBuffer {
     private static ServerBuffer sbInstance = null;
-    //HashSet<String> IDSet;
     private HashMap<String, VideoClip> idMap;
     private PriorityQueue<VideoClip> clipsPQ;
     private int size;

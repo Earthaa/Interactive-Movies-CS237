@@ -7,7 +7,7 @@ import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
 import com.constants.Constants;
 public class VideoClip implements Comparable<VideoClip> {
-    //private FSDataInputStream video;
+
     private long size;
     private String ID;
     private int visitCount;
@@ -37,13 +37,12 @@ public class VideoClip implements Comparable<VideoClip> {
         this.ID = v.ID;
         this.visitCount = v.visitCount;
     }
+
     public byte[] getVideo(){
         return this.video;
     }
 
-//    public FSDataInputStream getVideo(){
-//        return this.video;
-//    }
+
     public long getSize(){
         return this.size;
     }
